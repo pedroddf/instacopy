@@ -1,0 +1,144 @@
+$color1: #fafafa; // bg // bg input
+$color2: #dbdbdb; // border
+$color3: #0095f6; // button hover
+$color4: #385185; // fb
+$color5: #00376b; // forget pass
+$color6: #262626; // text
+$color7: #0095f6; // link
+$color8: #8e8e8e; // text links footer
+$color9: #fff;
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: $color6;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: $color7;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.4rem;
+    background-color: $color1;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    max-width: 935px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // ou start
+    height: 100vh;
+}
+
+.insta-cover {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.insta-continue {
+    width: 45%;
+    display: flex;
+    align-items: center; // horizontal pois mudou a direcao (column)
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.insta-action {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: $color9;
+    border: 1px solid $color2;
+    padding: 45px;
+    margin-bottom: 15px;
+
+    #logo {
+        margin-bottom: 45px;
+    }
+}
+
+.action-login  {
+    width: 100%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        input {
+            margin-bottom: 8px;
+            border-radius: 3px;
+        
+            &[type='text'],
+            &[type='password'] {
+                background-color: $color1;
+                color: $color6;
+                padding: 10px;
+                border: 1px solid $color2;
+            }
+
+            &[type='password'] {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    button {
+        background-color: rgba(0,149,246,.3);
+        font-weight: 700;
+        color: $color1;
+        padding: 7px 10px;
+        border-radius: 5px;
+        border: none;
+    }
+}
+
+.insta-or {
+    background-color: $color8;
+    height: 1px;
+
+    p {
+        background-color: $color9;
+    }
+}
+
+.insta-action-stores {
+    background-color: transparent;
+    border: none;
+
+    .action-stores {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.insta-footer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
