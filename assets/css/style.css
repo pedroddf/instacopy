@@ -1,3 +1,9 @@
+/*------------------------------
+CORES
+------------------------------*/
+/*------------------------------
+RESET
+------------------------------*/
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #262626;
@@ -25,6 +31,9 @@ html {
   font-size: 62.5%;
 }
 
+/*------------------------------
+BODY
+------------------------------*/
 body {
   font-size: 1.4rem;
   background-color: #fafafa;
@@ -34,8 +43,18 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
+/*------------------------------
+WRAPPER
+------------------------------*/
 .wrapper {
   max-width: 935px;
   width: 100%;
@@ -45,12 +64,15 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px 0;
 }
 
+/*------------------------------
+COVER
+------------------------------*/
 .insta-cover {
   width: 50%;
   display: -webkit-box;
@@ -64,6 +86,15 @@ body {
           justify-content: center;
 }
 
+@media screen and (max-width: 875px) {
+  .insta-cover {
+    display: none;
+  }
+}
+
+/*------------------------------
+CONTINUE
+------------------------------*/
 .insta-continue {
   width: 45%;
   display: -webkit-box;
@@ -78,6 +109,7 @@ body {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  min-width: 350px;
 }
 
 .insta-action {
@@ -97,12 +129,26 @@ body {
   width: 100%;
   background-color: #fff;
   border: 1px solid #dbdbdb;
-  padding: 45px;
   margin-bottom: 15px;
 }
 
+@media screen and (max-width: 450px) {
+  .insta-action {
+    background-color: transparent;
+    border: none;
+  }
+}
+
 .insta-action #logo {
-  margin-bottom: 45px;
+  margin-bottom: 35px;
+}
+
+.insta-action {
+  padding: 20px 45px;
+}
+
+.insta-action:nth-child(1) {
+  padding: 45px 45px 30px;
 }
 
 .action-login {
@@ -148,17 +194,83 @@ body {
 }
 
 .insta-or {
-  background-color: #8e8e8e;
-  height: 1px;
+  width: 100%;
+  margin: 30px 0;
+  text-align: center;
 }
 
 .insta-or p {
   background-color: #fff;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+
+.insta-or p span {
+  position: relative;
+  z-index: 5;
+  background-color: #fff;
+  padding: 0 20px;
+  color: #8e8e8e;
+}
+
+.insta-or p:after, .insta-or p:before {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #dbdbdb;
+}
+
+.action-facebook {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.action-facebook a {
+  color: #385185;
+}
+
+.action-facebook a:first-of-type {
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: inherit;
+}
+
+.action-facebook a:last-of-type {
+  font-size: 1.2rem;
+}
+
+.action-facebook img {
+  vertical-align: bottom;
+  margin-right: 5px;
+}
+
+.action-signup a {
+  font-weight: 600;
 }
 
 .insta-action-stores {
   background-color: transparent;
   border: none;
+  padding-top: 10px;
+}
+
+.insta-action-stores p {
+  margin-bottom: 25px;
 }
 
 .insta-action-stores .action-stores {
@@ -173,16 +285,38 @@ body {
           justify-content: center;
 }
 
+.insta-action-stores .action-stores a:first-of-type {
+  margin-right: 5px;
+}
+
+.insta-action-stores .action-stores img {
+  max-width: 155px;
+}
+
+/*------------------------------
+RODAPE
+------------------------------*/
 .insta-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.insta-footer ul {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.insta-footer ul li {
+  font-size: 1.2rem;
+  color: #8e8e8e;
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.insta-footer ul a {
+  color: #8e8e8e;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,6 @@
+/*------------------------------
+CORES
+------------------------------*/
 $color1: #fafafa; // bg // bg input
 $color2: #dbdbdb; // border
 $color3: #0095f6; // button hover
@@ -8,6 +11,9 @@ $color7: #0095f6; // link
 $color8: #8e8e8e; // text links footer
 $color9: #fff;
 
+/*------------------------------
+RESET
+------------------------------*/
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: $color6;
@@ -34,35 +40,54 @@ html {
     font-size: 62.5%;
 }
 
+/*------------------------------
+BODY
+------------------------------*/
 body {
     font-size: 1.4rem;
     background-color: $color1;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
+/*------------------------------
+WRAPPER
+------------------------------*/
 .wrapper {
     max-width: 935px;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between; // ou start
-    height: 100vh;
+    justify-content: center;
+    margin: 30px 0;
 }
 
+/*------------------------------
+COVER
+------------------------------*/
 .insta-cover {
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 875px) {
+        display: none;
+    }
 }
 
+/*------------------------------
+CONTINUE
+------------------------------*/
 .insta-continue {
     width: 45%;
     display: flex;
     align-items: center; // horizontal pois mudou a direcao (column)
     flex-direction: column;
     justify-content: space-around;
+    min-width: 350px;
 }
 
 .insta-action {
@@ -73,11 +98,24 @@ body {
     width: 100%;
     background-color: $color9;
     border: 1px solid $color2;
-    padding: 45px;
     margin-bottom: 15px;
 
+    @media screen and (max-width: 450px) {
+        background-color: transparent;
+        border: none;
+    }
+
     #logo {
-        margin-bottom: 45px;
+        margin-bottom: 35px;
+    }
+}
+
+.insta-action {
+
+    padding: 20px 45px;
+
+    &:nth-child(1) {
+        padding: 45px 45px 30px;
     }
 }
 
@@ -118,27 +156,119 @@ body {
 }
 
 .insta-or {
-    background-color: $color8;
-    height: 1px;
+    
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
 
     p {
         background-color: $color9;
+        font-weight: 500;
+        position: relative;
+        z-index: 2;
+
+        span {
+            position: relative;
+            z-index: 5;
+            background-color: $color9;
+            padding: 0 20px;
+            color: $color8;
+        }
+
+        &:after,
+        &:before {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: $color2;
+        }
+    }
+}
+
+.action-facebook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+        color: $color4;
+
+        &:first-of-type {
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-size: inherit;
+        }
+
+        &:last-of-type {
+            font-size: 1.2rem;
+        }
+    }
+
+    img {
+        vertical-align: bottom;
+        margin-right: 5px;
+    }
+}
+
+.action-signup {
+
+    a {
+        font-weight: 600;
     }
 }
 
 .insta-action-stores {
     background-color: transparent;
     border: none;
+    padding-top: 10px;
+
+    p {
+        margin-bottom: 25px;
+    }
 
     .action-stores {
         display: flex;
         align-items: center;
         justify-content: center;
+
+        a {
+
+            &:first-of-type {
+                margin-right: 5px;
+            }
+        }
+
+        img {
+            max-width: 155px;
+        }
     }
 }
 
+/*------------------------------
+RODAPE
+------------------------------*/
 .insta-footer {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+    flex-direction: column;
+    text-align: center;
+
+    ul {
+        margin-bottom: 20px;
+        width: 100%;
+
+        li {
+            font-size: 1.2rem;
+            color: $color8;
+            margin: 0 5px;
+            display: inline-block;
+        }
+
+        a {
+            color: $color8;
+        }
+    }
 }
